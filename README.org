@@ -7,15 +7,16 @@
 
   - Innere Schleife ::
     - Partielle Korrektheit :: 
-      - SI_j :: Alle Elemente in a[:j] sind kleiner als a[j]
+      - SI_j :: Alle Elemente in a[:j] sind ~~kleiner als a[j]~~ **sortiert**
       - SI_0 :: a[:0] = [] (Ich nehme einfach an, dass nichts immer kleiner ist als irgendwas, bin nicht sicher ob das ganz korrekt ist)
       - SI_j sei wahr :: für ein beliebiges festes j (Induktionsannahme)
       - SI_{j+1} (Induktionsschritt) :: Wenn es kein Element in a[:j+1]
 	   gibt, das größer ist als a[j+1], dann behält das Element a[j+1]
-	   seine Position.  Ansonsten wird es solange mit jeweils
+	   seine Position __und wir haben immernoch eine sortierte Liste__.  Ansonsten wird es solange mit jeweils
 	   vorherigen Elementen (also mit Elementen mit decrementierendem
-	   Index) vertauscht, bis in a[:j+1] kein größeres Element mehr
-	   ist, als das bei a[j+1].
+	   Index) vertauscht, **bis ein kleineres element auftaucht, also haben wir eine neue liste**
+	   b=a[:k]+a[j+1]+a[k+1:j], da a[:j] sortiert ist, ist a[:k] und a[k+1:j] sortiert und es gilt
+	   a[k]<a[j+1]<a[k+1], somit ist auch b sortiert.
     - Terminierung :: Die Schleife wird ausgeführt, solange j größer
          als 0 ist. In jeder Iteration wird aber j um 1
          verringert. Darum terminiert die Schleife.
