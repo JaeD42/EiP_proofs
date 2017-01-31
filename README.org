@@ -12,7 +12,7 @@
       - SI_j sei wahr :: für ein beliebiges festes j (Induktionsannahme)
       - SI_{j+1} (Induktionsschritt) :: Wenn es kein Element in a[:j+1]
 	   gibt, das größer ist als a[j+1], dann behält das Element a[j+1]
-	   seine Position __und wir haben immernoch eine sortierte Liste__.  Ansonsten wird es solange mit jeweils
+	   seine Position **und wir haben immernoch eine sortierte Liste**.  Ansonsten wird es solange mit jeweils
 	   vorherigen Elementen (also mit Elementen mit decrementierendem
 	   Index) vertauscht, **bis ein kleineres element auftaucht, also haben wir eine neue liste**
 	   b=a[:k]+a[j+1]+a[k+1:j], da a[:j] sortiert ist, ist a[:k] und a[k+1:j] sortiert und es gilt
